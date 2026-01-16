@@ -21,10 +21,14 @@ const Navbar = ({ navItems }: { navItems: NavItem[] }) => {
             </div>
           </div>
         </Link>
-        <ul className="flex items-center gap-x-3 mr-4">
+        <ul className="flex items-center h-full [&>li]:border-x [&>li]:w-36 [&>li]:border-x-gray-50/30">
           {
             navItems?.map((item, index: number) => <NavItemNode key={index} item={item} />)
           }
+          <li className="bg-white w-28! justify-center flex-col text-black h-full flex items-center">
+            <Image src="/ellipsis.svg" className="rotate-90" alt="More options" width={32} height={32} />
+            <p>Menu</p>
+          </li>
         </ul>
       </nav>
     </header>
