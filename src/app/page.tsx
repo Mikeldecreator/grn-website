@@ -5,7 +5,7 @@ import { HomeProps } from "../props/NavProps";
 
 export default function Home(): JSX.Element {
   return (
-    <div className="w-full">
+    <div className="w-full relative min-h-screen">
       <Navbar navItems={HomeProps} />
       <Hero />
     </div>

@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.className} ${inter.className} antialiased w-screen`}
+        className={`bg-white ${manrope.className} ${inter.className} antialiased w-screen`}
       >
 
         {children}

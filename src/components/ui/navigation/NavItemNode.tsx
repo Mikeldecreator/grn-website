@@ -13,28 +13,16 @@ const NavItemNode = ({ item }: { item: NavItem }) => {
   if (!hasChildren) {
     return (
       <motion.li className="list-none w-32">
-        <div className="flex flex-col items-center justify-center h-30">
-          {item.icon && <NavIconRenderer icon={item.icon} />}
-          <p className="font-medium">{item.label}</p>
+        <div className="flex gap-x-3  items-center justify-center h-30">
+          <p className="font-semibold capitalize">{item.label}</p>
         </div>
       </motion.li>
 
     )
   }
   return (
-    <motion.li onClick={() => setIsOpen(!isOpen)} onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} className="list-none">
-      <div>
-        {item.icon && <NavIconRenderer icon={item.icon} />}
-        <p className="font-medium">{item.label}</p>
-      </div>
-      <AnimatePresence initial={false}>
-        {
-          <motion.ul initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", width: "500px", opacity: 1 }} transition={{
-            duration: 0.5,
-            ease: "easeInOut"
-          }} exit={{ height: 0, opacity: 0 }} className="bg-red-400">
-            {isOpen && item.children!.map((child, index: number) => <NavItemNode key={index} item={child} />)}</motion.ul>}
-      </AnimatePresence>
+    <motion.li onClick={() => setIsOpen(!isOpen)} onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} className="list-none font-semibold space-x-3 flex items-center gap-x-3 capitalize">
+      {item.label}
     </motion.li>
   )
 }

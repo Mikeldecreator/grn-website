@@ -4,13 +4,17 @@ import { AudioWave01Icon, HeadphonesIcon, UserGroupIcon } from "@hugeicons/core-
 
 export const HomeProps: NavItem[] = [
   {
+    label: "About us",
+    href: "/about"
+  },
+  {
     label: "Connect",
     href: "/connect",
     icon: {
       kind: "hugeicons",
       icon: UserGroupIcon,
-      width: 40,
-      height: 40
+      width: 30,
+      height: 30
     }
   },
   {
